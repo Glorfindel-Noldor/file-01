@@ -10,7 +10,7 @@ const Router = [
         error   : <Error />,
         child   : [
             {
-                path    : '/',
+                path    : '/home',
                 element : <Home />,
                 exact   : true,
             }

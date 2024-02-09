@@ -1,9 +1,13 @@
 import React from "react";
+import NavBar from "./NavBar";
 
 function Error(){
 
     return(
-        <h1>Error - broken url perhaps -</h1>
+        <>
+            <NavBar />
+            <h1>Error - broken url perhaps -</h1>
+        </>
     )
 }
 export default Error;
