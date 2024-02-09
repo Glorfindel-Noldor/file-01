@@ -20,13 +20,6 @@ function Main(){
         .catch((error)=>(alert( `this error persists in Main.js after setMainState: ${error}` )))
     },[])
 
-
-
-
-
-
-
-
     return(
         <>
         <NavBar />
