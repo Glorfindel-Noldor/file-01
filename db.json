@@ -1,3 +1,9 @@
 {
-    "data" : []
+  "people": [
+    {
+    "id": 1,
+    "first name": "Bob",
+    "last name": "Bobson" 
+  }
+]
 }

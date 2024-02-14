@@ -5,7 +5,11 @@ function NavBar(){
 
     return(
         <nav>
-            <NavLink to={'/home'}>Home </NavLink>
+            <NavLink to={'/'}> Home </NavLink>
+            <NavLink to={'/one'}> One</NavLink>
+            <NavLink to={'/two'}> Two</NavLink>
+            <NavLink to={'/three'}> Three</NavLink>
+
         </nav>
     )
 }

@@ -6,7 +6,7 @@ function Error(){
     return(
         <>
             <NavBar />
-            <h1>Error - broken url perhaps -</h1>
+            <h1>Error -</h1>
         </>
     )
 }
