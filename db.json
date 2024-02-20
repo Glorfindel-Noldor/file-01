@@ -1,9 +1,18 @@
 {
   "people": [
     {
-    "id": 1,
-    "first name": "Bob",
-    "last name": "Bobson" 
-  }
-]
+      "id": "1",
+      "first": "Bob",
+      "last": "Bobson",
+      "email": "bob.bobson@icloud.com",
+      "occupation": "Engineer"
+    },
+    {
+      "id": "82c3",
+      "firstName": "Jim",
+      "lastName": "Jimson",
+      "email": "Jim.Jimson@email.com",
+      "occupation": "Runner"
+    }
+  ]
 }

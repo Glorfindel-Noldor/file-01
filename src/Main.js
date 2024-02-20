@@ -10,40 +10,67 @@ const api = 'http://localhost:8000/people'
 
 
 function Main(){
-    const [mainState, setMainState] = useState([]) // remember to make it more descriptive 
-    const [stateBoole, setStateBoole]= useState(false)
 
-    // useEffect(()=>{
-    //     fetch(api)
-    //     .then((riz)=>{ // set better names
-    //         if(riz.ok){
-    //             return (
-    //                 riz.json(), 
-    //                 setStateBoole(true)
-    //             )
-    //         }
-    //         else if(!riz.ok){
-    //             throw new Error(`this error persists in Main.js with fetch`)
-    //         }
-    //     })
-    //     .then(setMainState)
-    //     .catch((error)=>(alert( `this error persists in Main.js after setMainState: ${error}` )))
 
-    // },[])
-
- console.log(mainState)
+    // const [peopleInfo, setPeopleInfo] = useState({
+    //     first: '',
+    //     last: '',
+    //     email: '',
+    //     occupation: ''
+    // }) 
+    
+    const [firstName, setFirstName]=useState('')
+    const [lastName, setLastName]=useState('')
+    const [email, setEmail]=useState('')
+    const [occupation, setOccupation]=useState('')
 
 
 
-    const bringBackToState = (value)=>{
-        setMainState(value)
-    }
+
+
+
+
+
+    useEffect(()=>{
+        fetch(api)
+        .then((res)=>{ // set better names
+            if(res.ok){
+                return (
+                    res.json()
+                )
+            }
+            else if(!res.ok){
+                throw new Error(`this error persists in Main.js with fetch`)
+            }
+        })
+        .then((data)=>{
+           data.people.forEach((person)=>{
+            setFirstName(person.first);
+            setLastName(person.last);
+            setEmail(person.email);
+            setOccupation(person.occupation);           
+           })
+        })
+        .catch((error)=>(alert( `this error persists in Main.js after trying to update fetch-then: ${error}` )))
+
+    },[])
 
     return(
         <>
         <NavBar/>
-        <Outlet context={{mainState, api, bringBackToState}}/>
-        <footer className='bottom-content' >{stateBoole ? `state is mounted` : `state is unmounted`}</footer>
+        {/* <Outlet context={{peopleInfo, api, setPeopleInfo}}/> */}
+
+        <Outlet context={{api,
+            firstName,
+            setFirstName,
+            lastName,
+            setLastName,
+            email,
+            setEmail,
+            occupation,
+            setOccupation
+        }}/>
+
         </>
     )
 }

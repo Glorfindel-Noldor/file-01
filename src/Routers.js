@@ -1,5 +1,5 @@
 import Main from './Main'
-import Home from './components/Home';
+import Form from './components/Form';
 import Error from './Error';
 
 import COMPONENT_ONE from './components/COMPONENT_ONE';
@@ -15,7 +15,7 @@ const router = [
         children   : [
             {
                 path    : '/',
-                element : <Home/>,
+                element : <Form/>,
                 exact   : true,
             },
             {
